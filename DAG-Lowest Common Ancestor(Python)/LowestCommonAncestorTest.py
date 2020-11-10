@@ -1,34 +1,39 @@
 import unittest
-import LowestCommonAncestor
+from DAG import Node,DAGLowestCommonAncestor
 
-class TestLowestCommonAncestor(unittest.TestCase):
-    #Testing for a node 4 and 1
-    def testing_4_and_1(self):
-        self.assertEqual(LowestCommonAncestor.lowest_common_ancestor(LowestCommonAncestor.root, 4, 1).data, 8)
+class DAGLowestCommonAncestorTest(unittest.TestCase):
+    def testing_normal_graph(self):
+        root, n1, n2, n3, n4, n5, n6 = Node(0), Node(1), Node(2), Node(3), Node(4), Node(5), Node(6)
+
+        root.succ = [n1]
+        n1.predec = [root]
+        n1.succ = [n2, n3, n4, n5]
+        n2.predec = [n1]
+        n2.succ = [n4]
+        n3.predec = [n1]
+        n3.succ = [n4, n5]
+        n4.predec = [n1, n2, n3]
+        n4.succ = [n5]
+        n5.predec = [n1, n3, n4]
+        n5.succ = [n6]
+        n6.predec = [n5]
+
+        lca = DAGLowestCommonAncestor(root, n2, n3)
+        self.assertEquals(lca,1)
+
+    def testing_empty_graph(self):
+        root = None
         
-    #Testing for a node 10 and 11
-    def testing_10_and_11(self):
-        self.assertEqual(LowestCommonAncestor.lowest_common_ancestor(LowestCommonAncestor.root, 10, 11).data, 12)
-        
-    #Testing for a node 6 and 8
-    def testing_6_and_8(self):
-        self.assertEqual(LowestCommonAncestor.lowest_common_ancestor(LowestCommonAncestor.root, 6, 8).data, 9)
-        
-    #Testing for a node 9 and 12
-    def testing_9_and_12(self):
-        self.assertEqual(LowestCommonAncestor.lowest_common_ancestor(LowestCommonAncestor.root, 9, 12).data, 14)
-        
-    #Testing for node 1 and 11
-    def testing_1_and_11(self):
-        self.assertEqual(LowestCommonAncestor.lowest_common_ancestor(LowestCommonAncestor.root, 1, 11).data, 14)
-    
-    #Testing for nodes that are not in the range of the tree
-    def testing_out_of_range(self):
-        self.assertEqual(LowestCommonAncestor.lowest_common_ancestor(LowestCommonAncestor.root, 15, 19), None)
-        
-    #Testing for a same node
-    def testing_same_numbers(self):
-        self.assertEqual(LowestCommonAncestor.lowest_common_ancestor(LowestCommonAncestor.root, 10, 10).data, 10)
+        lca = DAGLowestCommonAncestor(root, 1, 5)
+        self.assertEquals(lca,None)
+
+    def testing_root_of_graph(self):
+        root, n1 = Node(0), Node(1)
+
+        root.succ = [n1]
+
+        lca = DAGLowestCommonAncestor(root, root, n1)
+        self.assertEquals(lca, 0)
 
 if __name__ == '__main__':
     unittest.main()
