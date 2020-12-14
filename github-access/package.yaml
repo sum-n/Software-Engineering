@@ -2,9 +2,9 @@ name:                github-access
 version:             0.1.0.0
 github:              "githubuser/github-access"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2020 Author name here"
+author:              "Suman Neupane"
+maintainer:          neupanes@tcd.ie
+copyright:           "2020 Suman Neupane"
 
 extra-source-files:
 - README.md
@@ -21,6 +21,11 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- aeson
+- text
+- servant
+- servant-client
+- http-client
 
 library:
   source-dirs: src
