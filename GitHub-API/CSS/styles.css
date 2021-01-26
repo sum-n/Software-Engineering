@@ -1,0 +1,68 @@
+* {
+    font-family:"Times New Roman", Georgia, Serif;
+} 
+  
+h1 {
+    font-size: 105px;
+    cursor:default;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+body {
+    background-image: linear-gradient(to left, rgb(192, 204, 127), rgba(243, 102, 67, 0.76));
+} 
+  
+body {
+    display: flex;
+    background-size:auto;
+} 
+
+input{
+    color:gray;
+    font-size: 20px;
+    position: relative;
+    /*margin-left: 40.5%;*/
+    background: lightblue;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    left: 10px;
+}
+      
+button {
+    color:gray;
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;
+    background: lightblue;
+    margin-top: 3%;
+    /*margin-left: 47%;*/
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    left: 10px;
+} 
+  
+p {
+    color: white;  
+    text-shadow: 2px 2px 4px #000000;
+    position: relative;
+    font-size: 20px;
+    top: 15px;
+    cursor:default;
+    left: 20px;
+}
+
+.info {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 20px;
+}
+
+.image {
+    position: relative;
+    top: 5%;
+    border-radius: 5px;
+    padding: 5px;
+    left: 7px;
+    box-shadow: 0 8px 20px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+

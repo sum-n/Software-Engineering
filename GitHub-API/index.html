@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Demo/pie_api.png">
+    <title>GitHub Visualization</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <div>
+        <h1 style="text-align: left"> GitHub REST API </h1>
+        <form id="my-form" autocomplete="off" novalidate="novalidate"></form>
+        
+            <div class="info"> 
+                <p id="enter_username">Username</p> 
+                <input id="user" type="text" name="username" id="search" required)>
+
+                <p id="enter_token">Token</p> 
+                <input id="token" type="text" placeholder="Optional" name="token" id="search"><br>
+                <br><button id="button"  onclick="handleInput()">Submit </button>
+            </div>
+        <div>
+            <div>
+                <div>
+                    <br><img class="image" id="img" src=''>
+                    <p id="name"></p>
+                    <p id="login"></p>
+                    <p id="bio"></p>
+                    <p id="following"></p>                    
+                    <p id="followers"></p>
+                    <p id="public_repos"></p>
+                    <p id="location"></p><br><br>
+                    <p id="data"></p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p><canvas id="language" width="800" height="600"></canvas></p><br>
+                </div>
+                <p id="data2"></p>
+                <div>
+                    <p><canvas id="commits" width="800" height="600"></canvas></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="JS/app.js" defer></script>
+</body>
+</html>
